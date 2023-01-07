@@ -1,0 +1,23 @@
+.link{
+	background: none;
+	border: none;
+	text-decoration: none;
+	color:#1a1a1a;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.dropdown{
+  position: relative;
+
+}
+.dropdown-menu{
+  position: absolute;
+  left: 0;
+  top: cal(100% .25rem);
+  background-color: white;
+  padding: .75rem;
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+}

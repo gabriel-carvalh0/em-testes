@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{block.super}} | começo {% endblock title %}
+{% block container %}
+  <main>
+    <div class="escrita">
+        <br>
+        <br>
+        <h1> Boas vindas!! </h1>
+        <hr>
+        <br>
+        <h2>Você está logado em:{{ user.name }}</h2>
+        <br>
+
+        <h2>aproveite nosso site!!</h2>
+      <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo.</p>
+      <p>nascetur ridiculus mus. Nullam id dolor id nibh sade.</p>
+      <p><small>This line of text is meant to be treated as fine sddca print.</small></p>
+      <p>The following is <strong>rendered as bold text</strong>ac casdn dsa.</p>
+      <p>The following is <em>rendered as italicized text</em> i don't q.</p>
+      <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr> it's supe.</p>
+    </div>
+  </main>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+#capa{
+    cursor:pointer;
+}
+
+.produtos{
+	width: 940px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+.produtos li{
+	display: inline-block;
+	text-align: center;
+	width: 30%;
+	vertical-align: top;
+	margin:0 1.5%;
+	padding: 30px 10px;
+	box-sizing: border-box;
+	border: solid black;
+	border-radius: 20px;
+}
+
+.produtos li:hover
+{
+	border:solid rgb(221, 217, 217);
+}
+
+.produtos h2{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+
+.produto-descricao{
+	font-size:18px;
+    text-decoration: none;
+    color:#000;
+}
+.produto-descricao:hover{
+    color:rgb(221, 221, 221);
+}
+
+.preco-produto{
+	font-size:30px;
+	font-weight: bold;
+	margin: 10px 0 0;
+}

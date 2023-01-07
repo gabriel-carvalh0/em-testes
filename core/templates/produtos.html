@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ block.super }} | começo {% endblock title %}
+{% block container %}
+          
+<div class="container">
+
+    <ul class="produtos">
+      {% for product in products %}
+        <li style="margin-top: 50px;">
+          <h2>{{ product.name }}</h2>
+          <h3 style="color: grey;"><strong>categoria:</strong></h3>
+          <h3>"{{ product.category }}"</h3>
+          <a href="#"><img id="capa" src="{% static 'img/error.png' %}"></a>
+          <a class="produto-descricao" href="#">{{ product.description }}</a>
+          <p class="preco-produto">R${{ product.price }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block title %} {{ block.super }} | Contato {% endblock title %}
+{% block container %}
+<style type="text/css">
+	.fundo{
+		height: 650px;
+		background-color: #e3e3e3;
+		display: flex;
+		justify-content: center;
+		justify-items: center;		
+	}
+	.form-horizontal{
+		margin-top: 2em;
+		margin-bottom: 1em;
+		height: 600px;
+		background-color: #FFF;
+		border-radius: 10px;
+	}
+	fieldset{
+		margin:20px;
+	}
+
+</style>
+
+<div class="fundo">
+	<form class="form-horizontal" method="POST">
+	      {% csrf_token %}
+	        <fieldset>
+	            {% for field in form %}
+	            <div class="form-group{% if field.errors %} has-error {% endif %}">
+	              <label for="{{ field.auto_id }}" class="form-label mt-4">{{ field.label }}</label>
+	              <div class="col-md-9">
+	                {% render_field field class='form-lable mt-4' %}
+	                {% for error in field.errors %}
+	                <span class="help-block">{{ error }}</span>
+	                {% endfor %}
+	              </div>
+	            </div>
+	            {% endfor %}
+	              <div class="col-md-9 col-md-offset-3">
+	                <button type="submit" class="btn btn-primary">Enviar</button>
+	              </div>
+	        </fieldset>
+	    
+
+	</form>
+</div>
+
+{% endblock container %}
+
+
+
