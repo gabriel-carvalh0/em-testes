@@ -30,7 +30,7 @@
                     <a class="nav-link" href="{% url 'catalogo' %}">Catalogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'contato' %}">Contato</a>
@@ -52,11 +52,11 @@
         </nav>
 
         <!-- Page Content -->
-        
-      {% block container %}
-          
-      {% endblock container %}
-
+      <div class="container">
+        {% block container %}
+            
+        {% endblock container %}
+      </div>
         <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
       </body>
 </html>

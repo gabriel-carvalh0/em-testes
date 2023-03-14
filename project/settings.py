@@ -39,10 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #libs
     'widget_tweaks',
-    #apps
-    'checkout',
+    
+    # apps
     'core',
+    'vendas',
+    'checkout',
+
+    'allauth.socialaccount.providers.google',
+
 ]
 
 MIDDLEWARE = [
@@ -68,6 +74,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            #apps
+                'core.context_processors.categories',
+
             ],
         },
     },
@@ -133,9 +142,10 @@ LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "entrar"
 
 # EMAIL
-EMAIL_HOST_USER = 'gabrielmoraiscarvalho20@gmail.com'
-EMAIL_HOST_PASSWORD = 'canaltop'
-DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'gabrielmoraiscarvalho659@gmail.com'
+EMAIL_HOST_PASSWORD = 'wwkvoutzjglqrzciz'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

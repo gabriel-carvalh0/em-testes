@@ -1,4 +1,4 @@
-from .models import Category, Product
+from vendas.models import Category, Product
 
 def categories(request):
     return {

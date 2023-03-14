@@ -4,7 +4,6 @@
 {% block title %} {{ block.super }} | começo {% endblock title %}
 {% block container %}
           
-<div class="container">
 
     <ul class="produtos">
       {% for product in products %}
@@ -21,4 +20,28 @@
 
   </div>
 
+<hr>
+<h1>tabela com nossos produtos! </h1>
+<hr>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">produto</th>
+        <th scope="col">data de modificação</th>
+        <th scope="col">preço</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for product in products %}
+      <tr>
+        <td><a href="{{ product.get_absolute_url }}" style="color:#000;">{{product.name}}</a></td>
+        <td>criado em: "{{product.modified}}"</td>
+        <td>R${{product.price}}</td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+</div>
 {% endblock %}

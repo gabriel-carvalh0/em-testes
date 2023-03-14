@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
+
 from core import views
 from django.views.generic.base import TemplateView
 
@@ -24,11 +26,12 @@ from django.contrib.auth.views import LoginView,  LogoutView
 urlpatterns = [
     path('', LoginView.as_view(template_name="registration/login.html"), {'next_page':'home'}, name='entrar'),
     path('sair/', LogoutView.as_view(), {'next_page':'produtos'},  name='sair'),
-    path('produtos/', TemplateView.as_view(template_name="produtos.html"), name="produtos"),
     path('registrar', views.register, name="register"),
 
     path('logado/', views.home, name="home"),
-    path('logado/catalogo', views.product_list, name="catalogo"),
     path('logado/contato', views.contato, name="contato"),
     path('admin/', admin.site.urls),
+
+    path('produtos/', TemplateView.as_view(template_name="produtos.html"), name="produtos"),
+    url('logado/vendas/', include('vendas.urls'))
 ]
